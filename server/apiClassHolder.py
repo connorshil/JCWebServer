@@ -1,17 +1,20 @@
 from flask_restful import Api, Resource, reqparse
-from flask import request
-from dbFake import dbFake
+from flask import request, abort
+from server.dbFake import dbFake
 
 db = dbFake()
 
 class addAction(Resource):
 	def post(self):
 		req_data = request.get_json()
+		
+		if not 'action' in req_data or not req_data['action'] or not 'time' in req_data or not req_data['time']	:
+			abort(400)
+			
 		actionWord = req_data['action']
-		timeCount = req_data['time']
+		timeCount = req_data['time']	
 		
 		returnStatement = db.addAction(actionWord, timeCount)
-		
 		return returnStatement
 		
 class averageStats(Resource):

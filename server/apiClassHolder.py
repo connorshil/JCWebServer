@@ -8,7 +8,7 @@ class addAction(Resource):
 	def post(self):
 		req_data = request.get_json()
 		
-		if not 'action' in req_data or not req_data['action'] or not 'time' in req_data or not req_data['time']	:
+		if not 'action' in req_data or not req_data['action'] or not 'time' in req_data or not isinstance(req_data['time'], int):
 			abort(400)
 			
 		actionWord = req_data['action']

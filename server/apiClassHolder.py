@@ -10,9 +10,9 @@ class addAction(Resource):
 		actionWord = req_data['action']
 		timeCount = req_data['time']
 		
-		count = db.addAction(actionWord, timeCount)
+		returnStatement = db.addAction(actionWord, timeCount)
 		
-		return count
+		return returnStatement
 		
 class averageStats(Resource):
 	def get(self):

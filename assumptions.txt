@@ -1,7 +1,6 @@
 Assumptions:
-1. Port 8080 is open
-2. flask and flask_restful is installed
-3. Python 3 is installed
-4. Authentication is not necessary or taken care of by a parent network
-5. There is no database option
-6. Data persistence is not a goal
+1. Port 8080 is open.
+2. flask and flask_restful are installed. If they are not, they are easy to install with "pip install $" with [flask, flask_restful].
+3. Python 3 is installed. To run this project I took the latest version of Python available (3.8).
+4. Authentication is not a goal within the current project scope or is taken care of by a parent network.
+6. Data persistence is not a goal within the current project scope.

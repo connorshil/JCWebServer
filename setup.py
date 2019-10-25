@@ -6,6 +6,8 @@ from server import apiClassHolder
 app = Flask(__name__)
 api = Api(app, catch_all_404s=True)
 
+#authentication can easily be added with the flask_auth library
+
 parser = reqparse.RequestParser()
 
 api.add_resource(apiClassHolder.addAction, '/api/action')
